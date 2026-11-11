@@ -1,16 +1,16 @@
 import { Analytics } from '@vercel/analytics/react';
-import { ArrowLeft, ArrowUpRight, Github, Terminal } from 'lucide-react';
-import { githubUrl, projects } from './content/projects';
+import { ArrowLeft, ArrowUpRight, Github, Linkedin, Terminal } from 'lucide-react';
+import { githubUrl, linkedInUrl, projects } from './content/projects';
 import { HomePage } from './pages/HomePage';
-import { ProjectPage, ResumePage } from './pages/DetailPages';
+import { AboutPage, ProjectPage } from './pages/DetailPages';
 
 const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
 const isHome = pathname === '/';
 const project = projects.find((item) => pathname === `/work/${item.slug}`);
-const isResume = pathname === '/resume';
+const isAbout = pathname === '/about' || pathname === '/resume';
 
-if (project || isResume) {
-  document.title = `${project?.name ?? 'Résumé'} · Marco Santos`;
+if (project || isAbout) {
+  document.title = `${project?.name ?? 'About'} · Marco Santos`;
 }
 
 export function App() {
@@ -25,16 +25,17 @@ export function App() {
           </a>
           <nav aria-label="Main navigation" className="main-nav">
             <a href="/#work">Work</a>
-            <a href="/resume" aria-current={isResume ? 'page' : undefined}>Résumé</a>
-            <a href={githubUrl} className="header-github" aria-label="GitHub profile"><Github size={16} aria-hidden="true" /><span>GitHub</span></a>
+            <a href="/about" aria-current={isAbout ? 'page' : undefined}>About</a>
+            <a href={githubUrl} className="header-social" aria-label="GitHub profile"><Github size={16} aria-hidden="true" /><span>GitHub</span></a>
+            <a href={linkedInUrl} className="header-social" aria-label="LinkedIn profile"><Linkedin size={16} aria-hidden="true" /><span>LinkedIn</span></a>
           </nav>
         </div>
       </header>
       <main id="main" tabIndex={-1}>
         {isHome ? <HomePage /> : null}
         {project ? <ProjectPage project={project} /> : null}
-        {isResume ? <ResumePage /> : null}
-        {!isHome && !project && !isResume ? (
+        {isAbout ? <AboutPage /> : null}
+        {!isHome && !project && !isAbout ? (
           <div className="container detail-page missing-page">
             <p className="eyebrow">404 / Page not found</p>
             <h1>Lost your path?</h1>
@@ -45,7 +46,10 @@ export function App() {
       <footer className="site-footer">
         <div className="container footer-inner">
           <span>© {new Date().getFullYear()} Marco Santos</span>
-          <a href={githubUrl}>GitHub <ArrowUpRight size={14} aria-hidden="true" /></a>
+          <div className="footer-links">
+            <a href={githubUrl}>GitHub <ArrowUpRight size={14} aria-hidden="true" /></a>
+            <a href={linkedInUrl}>LinkedIn <ArrowUpRight size={14} aria-hidden="true" /></a>
+          </div>
         </div>
       </footer>
       <Analytics />

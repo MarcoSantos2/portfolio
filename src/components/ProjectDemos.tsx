@@ -1,49 +1,6 @@
-import { ArrowRight, Check, Clapperboard, Play, RotateCcw } from 'lucide-react';
-import { useRef, useState } from 'react';
-import { actorPath, filmChoices, voiceTurns } from '../content/demos';
-
-export function VoiceDemo() {
-  const [activeTurn, setActiveTurn] = useState(-1);
-  const audio = useRef<HTMLAudioElement>(null);
-
-  return (
-    <details className="demo voice-demo" onToggle={(event) => {
-      if (!event.currentTarget.open) audio.current?.pause();
-    }}>
-      <summary onClick={(event) => {
-        if (!event.currentTarget.closest('details')?.open) {
-          void audio.current?.play().catch(() => {
-            // Native audio controls remain available when playback is blocked.
-          });
-        }
-      }}><Play size={15} aria-hidden="true" /> Play voice demo</summary>
-      <div className="demo-body">
-        <p className="demo-note">Illustrative interview with synthesized voices.</p>
-        <audio
-          aria-label="WiBo illustrative interview"
-          ref={audio}
-          controls
-          preload="none"
-          src="/media/wibo-interview.mp3"
-          onTimeUpdate={(event) => {
-            const elapsed = event.currentTarget.currentTime;
-            setActiveTurn(voiceTurns.findLastIndex((turn) => turn.start <= elapsed));
-          }}
-          onEnded={() => setActiveTurn(-1)}
-        >
-          <a href="/media/wibo-interview.mp3">Download the interview sample</a>
-        </audio>
-        <ol className="voice-transcript" aria-label="Interview transcript">
-          {voiceTurns.map((turn, index) => (
-            <li key={turn.start} data-active={index === activeTurn}>
-              <strong>{turn.speaker}</strong><span>{turn.text}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </details>
-  );
-}
+import { ArrowRight, Check, Clapperboard, RotateCcw } from 'lucide-react';
+import { useState } from 'react';
+import { actorPath, filmChoices } from '../content/demos';
 
 export function HopsDemo() {
   const [choice, setChoice] = useState<string | null>(null);

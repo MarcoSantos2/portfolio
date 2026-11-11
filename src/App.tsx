@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { ArrowLeft, ArrowUpRight, Github, Terminal } from 'lucide-react';
 import { githubUrl, projects } from './content/projects';
 import { HomePage } from './pages/HomePage';
@@ -47,6 +48,7 @@ export function App() {
           <a href={githubUrl}>GitHub <ArrowUpRight size={14} aria-hidden="true" /></a>
         </div>
       </footer>
+      <Analytics />
     </>
   );
 }

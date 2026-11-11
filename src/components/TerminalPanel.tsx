@@ -2,16 +2,18 @@ import { ArrowUpRight, CornerDownLeft, Terminal, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent, KeyboardEvent } from 'react';
 import { actorPath } from '../content/demos';
-import { githubUrl, projects } from '../content/projects';
+import { githubUrl, linkedInUrl, projects } from '../content/projects';
 
 const destinations = new Map([
   ['work', '/#work'],
   ['open work', '/#work'],
-  ['open wibo', '/work/wibo'],
-  ['open six-hops', '/work/six-hops'],
-  ['resume', '/resume'],
-  ['open resume', '/resume'],
+  ...projects.map((project): [string, string] => [`open ${project.slug}`, `/work/${project.slug}`]),
+  ['about', '/about'],
+  ['open about', '/about'],
+  ['resume', '/about'],
+  ['open resume', '/about'],
   ['github', githubUrl],
+  ['linkedin', linkedInUrl],
 ]);
 
 type CommandResult = { command: string; text?: string; showProjects?: boolean };
@@ -83,7 +85,7 @@ export function TerminalPanel() {
     let result: CommandResult;
     switch (command) {
       case 'help':
-        result = { command, text: 'ls projects · open wibo · open six-hops · resume · github · whoami · clear' };
+        result = { command, text: 'ls projects · open <project> · about · github · linkedin · whoami · clear' };
         break;
       case 'ls':
       case 'ls projects':

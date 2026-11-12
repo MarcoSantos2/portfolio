@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowUpRight, Download } from 'lucide-react';
 import { BusinessMetrics } from '../components/BusinessMetrics';
 import { TechStack } from '../components/TechStack';
-import { businessExperience, resumeUrl } from '../content/profile';
+import { businessExperience, resumeUrl, technicalSkills } from '../content/profile';
 import { githubUrl, linkedInUrl } from '../content/projects';
 
 export function AboutPage() {
@@ -11,7 +11,7 @@ export function AboutPage() {
       <header className="detail-header">
         <p className="eyebrow section-path">~/about</p>
         <h1>About me</h1>
-        <p className="detail-lede">I’m Marco Santos, a full-stack software engineer with six years of experience leading a client-facing business. I bring both perspectives to the products I build.</p>
+        <p className="detail-lede">I’m Marco Santos, a full-stack software engineer and business manager with seven years of experience leading a client-facing business. I bring both perspectives to the products I build.</p>
         <div className="profile-actions">
           <a className="button button-primary" href={linkedInUrl}>LinkedIn <ArrowUpRight size={16} aria-hidden="true" /></a>
           <a className="button button-secondary" href={githubUrl}>GitHub <ArrowUpRight size={16} aria-hidden="true" /></a>
@@ -61,7 +61,12 @@ export function AboutPage() {
           </section>
           <section aria-labelledby="skills-heading">
             <h2 id="skills-heading">Technical skills</h2>
-            <TechStack technologies={['TypeScript', 'Python', 'React', 'Node.js', 'Express', 'PostgreSQL', 'WebSockets', 'OpenAI Realtime', 'Docker', 'GitHub Actions']} />
+            {technicalSkills.map(({ label, technologies }) => (
+              <div className="skill-group" key={label}>
+                <h3>{label}</h3>
+                <TechStack technologies={technologies} label={label} />
+              </div>
+            ))}
           </section>
         </div>
       </div>

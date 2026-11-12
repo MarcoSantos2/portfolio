@@ -92,10 +92,10 @@ export const projects: Project[] = [
     slug: 'gravity-rules',
     name: 'Gravity Rules',
     summary: 'A 90-second arena game where stealing the crown changes everyone’s gravity.',
-    contribution: 'I built and submitted Gravity Rules to the Handshake AI Showcase, then made it playable as an intermission for Six Hops. Players can compete against bots or start a room with friends.',
+    contribution: 'I built Gravity Rules for the Create a Multiplayer Game challenge from Handshake and OpenAI, then made it playable as an intermission for Six Hops. Players can compete against bots or start a room with friends.',
     technologies: ['React', 'TypeScript', 'Canvas 2D', 'Web Workers'],
     primaryLink: { label: 'Play Gravity Rules', url: 'https://www.sixhopstotarget.com/gravity-rules' },
-    showcaseLink: { label: 'Handshake showcase entry', url: 'https://app.joinhandshake.com/ai-showcase/projects/3570830' },
+    showcaseLink: { label: 'Handshake and OpenAI challenge entry', url: 'https://app.joinhandshake.com/ai-showcase/projects/3570830' },
     caseStudy: [
       {
         title: 'Make the crown change the game',

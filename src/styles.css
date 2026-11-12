@@ -294,6 +294,9 @@ img { max-width: 100%; display: block; }
 .profile-list { display: grid; gap: 10px; padding: 0; margin: 12px 0 0; list-style: none; color: var(--muted); font-size: 14px; line-height: 1.5; }
 .profile-list li strong { display: block; color: var(--text); font-weight: 560; }
 .profile-list li span { display: block; }
+.skill-group { margin-top: 14px; }
+.skill-group h3 { color: var(--text); font-size: 14px; font-weight: 560; line-height: 1.4; }
+.skill-group .tech-list { margin-top: 7px; }
 .missing-page .text-link { margin-top: 14px; }
 
 @media (max-width: 900px) {

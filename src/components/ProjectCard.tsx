@@ -3,6 +3,7 @@ import type { Project } from '../content/projects';
 import { HopsDemo } from './ProjectDemos';
 import { ProjectMedia } from './ProjectMedia';
 import { TechStack } from './TechStack';
+import { ExternalLink } from './ExternalLink';
 
 export function ProjectCard({ project }: { project: Project }) {
   const titleId = `project-${project.slug}`;
@@ -17,11 +18,11 @@ export function ProjectCard({ project }: { project: Project }) {
         <TechStack technologies={project.technologies} />
         <div className="project-links">
           {project.primaryLink ? (
-            <a className="text-link" href={project.primaryLink.url}>{project.primaryLink.label} <ArrowUpRight size={16} aria-hidden="true" /></a>
+            <ExternalLink className="text-link" href={project.primaryLink.url}>{project.primaryLink.label} <ArrowUpRight size={16} aria-hidden="true" /></ExternalLink>
           ) : null}
           <a className="text-link secondary-link" href={`/work/${project.slug}`} aria-label={`How I built ${project.name}`}>How I built it <ArrowRight size={16} aria-hidden="true" /></a>
           {project.showcaseLink ? (
-            <a className="text-link secondary-link" href={project.showcaseLink.url}>{project.showcaseLink.label} <ArrowUpRight size={16} aria-hidden="true" /></a>
+            <ExternalLink className="text-link secondary-link" href={project.showcaseLink.url}>{project.showcaseLink.label} <ArrowUpRight size={16} aria-hidden="true" /></ExternalLink>
           ) : null}
         </div>
         {project.slug === 'six-hops' ? <HopsDemo /> : null}

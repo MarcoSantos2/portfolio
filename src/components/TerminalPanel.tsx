@@ -72,8 +72,12 @@ export function TerminalPanel() {
 
     const destination = destinations.get(command);
     if (destination) {
-      window.location.assign(destination);
-      if (destination === '/#work') close();
+      if (destination.startsWith('/')) {
+        window.location.assign(destination);
+        if (destination === '/#work') close();
+      } else {
+        window.open(destination, '_blank', 'noopener');
+      }
       return;
     }
 

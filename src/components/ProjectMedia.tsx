@@ -2,6 +2,7 @@ import { ArrowRight, ArrowUpRight, FileCode2 } from 'lucide-react';
 import { useState } from 'react';
 import { notebooks } from '../content/projects';
 import type { Project } from '../content/projects';
+import { ExternalLink } from './ExternalLink';
 
 const screenshots = [
   { label: 'Home', src: '/images/six-hops-home.webp', alt: 'Six Hops homepage with the daily challenge, multiplayer button, and an illustrated actor-to-actor example.' },
@@ -74,7 +75,7 @@ function NotebookLinks() {
   return (
     <div className="project-media notebook-list">
       {notebooks.map((notebook) => (
-        <a className="notebook" href={notebook.url} key={notebook.name}>
+        <ExternalLink className="notebook" href={notebook.url} key={notebook.name}>
           <FileCode2 size={22} className="notebook-icon" aria-hidden="true" />
           <div>
             <p className="eyebrow">{notebook.area}</p>
@@ -83,7 +84,7 @@ function NotebookLinks() {
             <p className="notebook-result">{notebook.result}</p>
           </div>
           <ArrowUpRight size={17} aria-hidden="true" />
-        </a>
+        </ExternalLink>
       ))}
     </div>
   );

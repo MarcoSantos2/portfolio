@@ -3,6 +3,7 @@ import { BusinessMetrics } from '../components/BusinessMetrics';
 import { TechStack } from '../components/TechStack';
 import { businessExperience, resumeUrl, technicalSkills } from '../content/profile';
 import { githubUrl, linkedInUrl } from '../content/projects';
+import { ExternalLink } from '../components/ExternalLink';
 
 export function AboutPage() {
   return (
@@ -13,8 +14,8 @@ export function AboutPage() {
         <h1>About me</h1>
         <p className="detail-lede">I’m Marco Santos, a full-stack software engineer and business manager with seven years of experience leading a client-facing business. I bring both perspectives to the products I build.</p>
         <div className="profile-actions">
-          <a className="button button-primary" href={linkedInUrl}>LinkedIn <ArrowUpRight size={16} aria-hidden="true" /></a>
-          <a className="button button-secondary" href={githubUrl}>GitHub <ArrowUpRight size={16} aria-hidden="true" /></a>
+          <ExternalLink className="button button-primary" href={linkedInUrl}>LinkedIn <ArrowUpRight size={16} aria-hidden="true" /></ExternalLink>
+          <ExternalLink className="button button-secondary" href={githubUrl}>GitHub <ArrowUpRight size={16} aria-hidden="true" /></ExternalLink>
           <a className="button button-secondary" href={resumeUrl} download>Download résumé (PDF) <Download size={16} aria-hidden="true" /></a>
         </div>
       </header>

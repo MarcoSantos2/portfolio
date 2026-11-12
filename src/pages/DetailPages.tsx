@@ -3,6 +3,7 @@ import type { Project } from '../content/projects';
 import { ProjectMedia } from '../components/ProjectMedia';
 import { HopsDemo } from '../components/ProjectDemos';
 import { TechStack } from '../components/TechStack';
+import { ExternalLink } from '../components/ExternalLink';
 
 export function ProjectPage({ project }: { project: Project }) {
   return (
@@ -14,9 +15,9 @@ export function ProjectPage({ project }: { project: Project }) {
         <p className="detail-lede">{project.summary}</p>
         {project.primaryLink ? (
           <div className="profile-actions">
-            <a className="button button-primary" href={project.primaryLink.url}>{project.primaryLink.label} <ArrowUpRight size={16} aria-hidden="true" /></a>
+            <ExternalLink className="button button-primary" href={project.primaryLink.url}>{project.primaryLink.label} <ArrowUpRight size={16} aria-hidden="true" /></ExternalLink>
             {project.showcaseLink ? (
-              <a className="button button-secondary" href={project.showcaseLink.url}>{project.showcaseLink.label} <ArrowUpRight size={16} aria-hidden="true" /></a>
+              <ExternalLink className="button button-secondary" href={project.showcaseLink.url}>{project.showcaseLink.label} <ArrowUpRight size={16} aria-hidden="true" /></ExternalLink>
             ) : null}
           </div>
         ) : null}

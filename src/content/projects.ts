@@ -3,11 +3,13 @@ type CaseStudySection = { title: string; text: string };
 export type Project = {
   slug: 'wibo' | 'six-hops' | 'gravity-rules' | 'aidconnect' | 'kaggle';
   name: string;
-  category: string;
   summary: string;
   contribution: string;
   technologies: string[];
   primaryLink?: { label: string; url: string };
+  showcaseLink?: { label: string; url: string };
+  impact?: string;
+  testimonial?: { quote: string; author: string };
   caseStudy: CaseStudySection[];
 };
 
@@ -35,10 +37,14 @@ export const projects: Project[] = [
   {
     slug: 'wibo',
     name: 'WiBo',
-    category: 'Conversational AI',
     summary: 'A voice AI interviewer for product designers to practice timed whiteboard challenges.',
-    contribution: 'I built the full-stack practice flow, including real-time voice, an interactive whiteboard, and a post-interview debrief.',
-    technologies: ['React', 'TypeScript', 'Node.js', 'WebSockets', 'PostgreSQL'],
+    contribution: 'I founded WiBo and took it from idea to launch as its full-stack developer, building real-time voice, an interactive whiteboard, and a post-interview debrief.',
+    impact: 'People have used WiBo to prepare for interviews and gone on to land jobs.',
+    testimonial: {
+      quote: 'WiBo is one of the most effective UX whiteboarding tools out there. It does a great job of simulating a real whiteboard interview, all the way down to the random prompt generation, timed session, and collaborative feedback with the AI interviewer. I would recommend it to anyone who needs to brush up on their whiteboarding skills, or is brand new to this interview format.',
+      author: 'Lauren H.',
+    },
+    technologies: ['React', 'TypeScript', 'Node.js', 'OpenAI Realtime', 'WebSockets', 'PostgreSQL'],
     primaryLink: { label: 'Visit WiBo', url: 'https://wibo.chat/' },
     caseStudy: [
       {
@@ -58,9 +64,13 @@ export const projects: Project[] = [
   {
     slug: 'six-hops',
     name: 'Six Hops to Target',
-    category: 'Multiplayer web game',
-    summary: 'Connect two actors through shared films. Solve the daily challenge or race another player live.',
-    contribution: 'I built the game, daily puzzles, multiplayer rooms, and the post-match view that shows both players the winner’s path.',
+    summary: 'A daily movie puzzle and multiplayer race to connect two actors.',
+    contribution: 'I took Six Hops from idea to launch, building daily puzzles, live multiplayer rooms, and a post-match view that shows both players the winning path.',
+    impact: 'More than 15,000 players have tried the game.',
+    testimonial: {
+      quote: 'I am loving it and I’ve been trying to find something like this for a bit, so I have enjoyed adding it to my daily routine.',
+      author: 'Amie R.',
+    },
     technologies: ['React', 'TypeScript', 'Express', 'PostgreSQL', 'Firebase'],
     primaryLink: { label: 'Play Six Hops', url: 'https://www.sixhopstotarget.com/' },
     caseStudy: [
@@ -81,11 +91,11 @@ export const projects: Project[] = [
   {
     slug: 'gravity-rules',
     name: 'Gravity Rules',
-    category: 'Multiplayer arcade game',
     summary: 'A 90-second arena game where stealing the crown changes everyone’s gravity.',
-    contribution: 'I built this minigame as an intermission for Six Hops. Players can compete against bots or create a room for friends.',
-    technologies: ['Browser game', 'Solo bots', 'Multiplayer rooms'],
+    contribution: 'I built and submitted Gravity Rules to the Handshake AI Showcase, then made it playable as an intermission for Six Hops. Players can compete against bots or start a room with friends.',
+    technologies: ['React', 'TypeScript', 'Canvas 2D', 'Web Workers'],
     primaryLink: { label: 'Play Gravity Rules', url: 'https://www.sixhopstotarget.com/gravity-rules' },
+    showcaseLink: { label: 'Handshake showcase entry', url: 'https://app.joinhandshake.com/ai-showcase/projects/3570830' },
     caseStudy: [
       {
         title: 'Make the crown change the game',
@@ -100,7 +110,6 @@ export const projects: Project[] = [
   {
     slug: 'aidconnect',
     name: 'AidConnect',
-    category: 'Backend engineering internship',
     summary: 'Authentication and onboarding for an app that helps healthcare aides organize their work.',
     contribution: 'I worked on sign-up, login, Google OAuth, password recovery, and email notifications during my backend internship.',
     technologies: ['TypeScript', 'Node.js', 'Express', 'TypeORM', 'MySQL', 'EJS'],
@@ -123,7 +132,6 @@ export const projects: Project[] = [
   {
     slug: 'kaggle',
     name: 'Machine Learning Projects',
-    category: 'Kaggle notebooks',
     summary: 'Two classification projects using pathology image patches and BBC news articles.',
     contribution: 'I built and evaluated model pipelines for computer vision and natural language processing and documented the experiments in notebooks.',
     technologies: ['Python', 'PyTorch', 'scikit-learn', 'TF-IDF'],

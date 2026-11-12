@@ -5,6 +5,7 @@ import { githubUrl, linkedInUrl, projects } from './content/projects';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ProjectPage } from './pages/DetailPages';
+import { ExternalLink } from './components/ExternalLink';
 
 const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
 const isHome = pathname === '/';
@@ -33,8 +34,8 @@ export function App() {
           <nav aria-label="Main navigation" className="main-nav">
             <a href="/#work">Work</a>
             <a href="/about" aria-current={isAbout ? 'page' : undefined}>About</a>
-            <a href={githubUrl} className="header-social" aria-label="GitHub profile"><Github size={16} aria-hidden="true" /><span>GitHub</span></a>
-            <a href={linkedInUrl} className="header-social" aria-label="LinkedIn profile"><Linkedin size={16} aria-hidden="true" /><span>LinkedIn</span></a>
+            <ExternalLink href={githubUrl} className="header-social" aria-label="GitHub profile"><Github size={16} aria-hidden="true" /><span>GitHub</span></ExternalLink>
+            <ExternalLink href={linkedInUrl} className="header-social" aria-label="LinkedIn profile"><Linkedin size={16} aria-hidden="true" /><span>LinkedIn</span></ExternalLink>
           </nav>
         </div>
       </header>
@@ -54,8 +55,8 @@ export function App() {
         <div className="container footer-inner">
           <span>© {new Date().getFullYear()} Marco Santos</span>
           <div className="footer-links">
-            <a href={githubUrl}>GitHub <ArrowUpRight size={14} aria-hidden="true" /></a>
-            <a href={linkedInUrl}>LinkedIn <ArrowUpRight size={14} aria-hidden="true" /></a>
+            <ExternalLink href={githubUrl}>GitHub <ArrowUpRight size={14} aria-hidden="true" /></ExternalLink>
+            <ExternalLink href={linkedInUrl}>LinkedIn <ArrowUpRight size={14} aria-hidden="true" /></ExternalLink>
           </div>
         </div>
       </footer>

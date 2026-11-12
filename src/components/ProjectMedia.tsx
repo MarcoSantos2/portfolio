@@ -26,11 +26,19 @@ const authFlows = {
 
 function SixHopsGallery() {
   const [index, setIndex] = useState(0);
-  const screenshot = screenshots[index];
   return (
     <figure className="project-media screenshot-gallery">
       <div className="project-media-screen gallery-screen" id="six-hops-screenshot">
-        <img key={screenshot.src} src={screenshot.src} alt={screenshot.alt} loading="lazy" decoding="async" />
+        {screenshots.map((item, position) => (
+          <img
+            key={item.src}
+            src={item.src}
+            alt={item.alt}
+            aria-hidden={position !== index}
+            loading="lazy"
+            decoding="async"
+          />
+        ))}
       </div>
       <figcaption className="media-switcher" aria-label="Six Hops screenshots">
         {screenshots.map((item, position) => (

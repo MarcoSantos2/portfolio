@@ -12,3 +12,18 @@ export const businessExperience = {
     { value: '80%', label: 'increase in revenue' },
   ],
 };
+
+export const technicalSkills = [
+  {
+    label: 'AI application development',
+    technologies: ['OpenAI Responses API', 'OpenAI Realtime API', 'Voice AI', 'Retrieval-augmented generation (RAG)', 'Embeddings', 'pgvector'],
+  },
+  {
+    label: 'Full-stack engineering',
+    technologies: ['TypeScript', 'JavaScript', 'Python', 'React', 'Node.js', 'Express', 'PostgreSQL', 'WebSockets', 'Server-sent events'],
+  },
+  {
+    label: 'Developer tools and delivery',
+    technologies: ['Cursor', 'OpenAI Codex', 'Docker', 'GitHub Actions', 'Vercel'],
+  },
+];

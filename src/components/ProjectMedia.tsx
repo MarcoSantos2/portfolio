@@ -5,8 +5,9 @@ import type { Project } from '../content/projects';
 
 const screenshots = [
   { label: 'Home', src: '/images/six-hops-home.webp', alt: 'Six Hops homepage with the daily challenge, multiplayer button, and an illustrated actor-to-actor example.' },
-  { label: 'Multiplayer', src: '/images/six-hops-multiplayer.webp', alt: 'Six Hops multiplayer screen with matchmaking and private-room options.' },
-  { label: 'Race result', src: '/images/six-hops-results.webp', alt: 'Six Hops race result showing the winner’s route through actor and movie cards.' },
+  { label: 'Multiplayer', src: '/images/six-hops-multiplayer.webp', alt: 'Live Six Hops race showing both players, the shared timer, and the start and target actors.' },
+  { label: 'Movie picker', src: '/images/six-hops-movie-picker.webp', alt: 'Movie and TV picker showing Jason Statham’s titles during a multiplayer race.' },
+  { label: 'Race result', src: '/images/six-hops-results.webp', alt: 'Six Hops win screen awarding three points and showing the winner’s path from Jason Statham to Scarlett Johansson.' },
 ];
 
 const authFlows = {
@@ -113,8 +114,24 @@ export function ProjectMedia({ project }: { project: Project }) {
       return <SixHopsGallery />;
     case 'gravity-rules':
       return (
-        <figure className="project-media project-media-screen gravity-screen">
-          <img src="/images/gravity-rules.webp" width="1120" height="796" alt="Gravity Rules arena with a round timer and options to play solo or with friends." loading="lazy" decoding="async" />
+        <figure className="project-media video-media">
+          <video
+            aria-label="Gravity Rules gameplay"
+            aria-describedby="gravity-gameplay-caption"
+            controls
+            muted
+            playsInline
+            preload="none"
+            poster="/images/gravity-rules.webp"
+            width="960"
+            height="540"
+          >
+            <source src="/media/gravity-rules-gameplay.mp4" type="video/mp4" />
+            <a href="/media/gravity-rules-gameplay.mp4">Download the gameplay clip</a>
+          </video>
+          <figcaption className="video-caption" id="gravity-gameplay-caption">
+            Gravity shifts mid-round as players dodge hazards, collect stars, and chase the crown.
+          </figcaption>
         </figure>
       );
     case 'aidconnect':

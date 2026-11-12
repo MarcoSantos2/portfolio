@@ -12,9 +12,9 @@ export function HomePage() {
         <div className="hero-backdrop" aria-hidden="true" />
         <div className="container hero-inner">
           <div className="hero-copy">
-            <p className="hero-identity">I’m <strong>Marco Santos</strong>, a full-stack software engineer.</p>
+            <p className="hero-identity">I’m <strong>Marco Santos</strong>, a full-stack software engineer and business manager.</p>
             <h1 id="hero-heading">I build AI tools and multiplayer games<span className="hero-period">.</span></h1>
-            <p className="hero-intro">Six years running a client-facing business taught me how to lead a team, listen to customers, and make decisions that improve the product.</p>
+            <p className="hero-intro">Seven years running a client-facing business taught me to lead teams and listen to customers. Building software taught me to turn that feedback into features, test them, and ship improvements.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">View work <ArrowDown size={16} aria-hidden="true" /></a>
               <a className="button button-secondary" href="/about"><UserRound size={16} aria-hidden="true" /> About me</a>

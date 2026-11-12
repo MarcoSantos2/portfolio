@@ -1,8 +1,10 @@
 import { Analytics } from '@vercel/analytics/react';
+import { useLayoutEffect } from 'react';
 import { ArrowLeft, ArrowUpRight, Github, Linkedin, Terminal } from 'lucide-react';
 import { githubUrl, linkedInUrl, projects } from './content/projects';
 import { HomePage } from './pages/HomePage';
-import { AboutPage, ProjectPage } from './pages/DetailPages';
+import { AboutPage } from './pages/AboutPage';
+import { ProjectPage } from './pages/DetailPages';
 
 const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
 const isHome = pathname === '/';
@@ -14,6 +16,11 @@ if (project || isAbout) {
 }
 
 export function App() {
+  useLayoutEffect(() => {
+    const anchor = window.location.hash.slice(1);
+    if (anchor) document.getElementById(anchor)?.scrollIntoView({ behavior: 'instant' });
+  }, []);
+
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>

@@ -28,7 +28,7 @@ function SixHopsGallery() {
   return (
     <figure className="project-media screenshot-gallery">
       <div className="project-media-screen gallery-screen" id="six-hops-screenshot">
-        <img src={screenshot.src} alt={screenshot.alt} loading="lazy" decoding="async" />
+        <img key={screenshot.src} src={screenshot.src} alt={screenshot.alt} loading="lazy" decoding="async" />
       </div>
       <figcaption className="media-switcher" aria-label="Six Hops screenshots">
         {screenshots.map((item, position) => (

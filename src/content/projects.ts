@@ -114,6 +114,10 @@ export const projects: Project[] = [
     contribution: 'I worked on sign-up, login, Google OAuth, password recovery, and email notifications during my backend internship.',
     technologies: ['TypeScript', 'Node.js', 'Express', 'TypeORM', 'MySQL', 'EJS'],
     primaryLink: { label: 'View backend repo', url: `${githubUrl}/user_auth_hca` },
+    testimonial: {
+      quote: 'In short: if you’re looking for someone who is self-motivated, intelligent, engaged, and eager to grow, Marco is exactly that. I wholeheartedly recommend him for any role where development acumen, learning agility, and initiative are valued. He will be a standout contributor to any team lucky enough to have him.',
+      author: 'Felipe S., AidConnect lead developer and founder',
+    },
     caseStudy: [
       {
         title: 'Support two ways to sign in',

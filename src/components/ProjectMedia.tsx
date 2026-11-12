@@ -104,19 +104,18 @@ export function ProjectMedia({ project }: { project: Project }) {
       return (
         <figure className="project-media video-media">
           <video
-            aria-label="Recorded WiBo voice interview"
+            aria-label="WiBo product release video"
             controls
             playsInline
             preload="none"
-            poster="/images/wibo-interview-poster.webp"
+            poster="/images/wibo-product-release-v2-poster.webp"
             width="960"
             height="540"
           >
-            <source src="/media/wibo-interview.mp4" type="video/mp4" />
-            <track kind="captions" src="/media/wibo-interview.en.vtt" srcLang="en" label="English" default />
-            <a href="/media/wibo-interview.mp4">Download the WiBo recording</a>
+            <source src="/media/wibo-product-release-v2.mp4" type="video/mp4" />
+            <a href="/media/wibo-product-release-v2.mp4">Download the WiBo product release video</a>
           </video>
-          <figcaption className="video-caption">Recorded WiBo session. Clarifying who the self-checkout redesign is for.</figcaption>
+          <figcaption className="video-caption">WiBo product walkthrough: design practice, real-time conversation, and interview feedback.</figcaption>
         </figure>
       );
     case 'six-hops':

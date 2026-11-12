@@ -13,7 +13,7 @@ npm run build
 npm run preview
 ```
 
-Project copy lives in `src/content/projects.ts`. Demo content lives in `src/content/demos.ts`. The WiBo video is an edited excerpt from a recorded practice session. The Six Hops gallery and Gravity Rules preview use screenshots of the games.
+Project copy lives in `src/content/projects.ts`. Demo content lives in `src/content/demos.ts`. The WiBo video is the 1080p product release walkthrough (`public/media/wibo-product-release-v2.mp4`), with a poster taken from the uploaded video. The Six Hops gallery and Gravity Rules preview use screenshots of the games.
 
 ## Branches and deployment
 

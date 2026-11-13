@@ -37,7 +37,7 @@ export const projects: Project[] = [
   {
     slug: 'wibo',
     name: 'WiBo',
-    summary: 'A voice AI interviewer for product designers to practice timed whiteboard challenges.',
+    summary: 'A voice AI interviewer that helps product designers practice timed whiteboard challenges.',
     contribution: 'I founded WiBo and took it from idea to launch as its full-stack developer, building real-time voice, an interactive whiteboard, and a post-interview debrief.',
     impact: 'People have used WiBo to prepare for interviews and gone on to land jobs.',
     testimonial: {
@@ -64,7 +64,7 @@ export const projects: Project[] = [
   {
     slug: 'six-hops',
     name: 'Six Hops to Target',
-    summary: 'A daily movie puzzle and multiplayer race to connect two actors.',
+    summary: 'A movie game where players connect actors in daily puzzles and live multiplayer races.',
     contribution: 'I took Six Hops from idea to launch, building daily puzzles, live multiplayer rooms, and a post-match view that shows both players the winning path.',
     impact: 'More than 15,000 players have tried the game.',
     testimonial: {
@@ -110,7 +110,7 @@ export const projects: Project[] = [
   {
     slug: 'aidconnect',
     name: 'AidConnect',
-    summary: 'Authentication and onboarding for an app that helps healthcare aides organize their work.',
+    summary: 'Scheduling and account access for an app that helps healthcare aides coordinate their work.',
     contribution: 'I worked on sign-up, login, Google OAuth, password recovery, and email notifications during my backend internship.',
     technologies: ['TypeScript', 'Node.js', 'Express', 'TypeORM', 'MySQL', 'EJS'],
     primaryLink: { label: 'View backend repo', url: `${githubUrl}/user_auth_hca` },
@@ -136,7 +136,7 @@ export const projects: Project[] = [
   {
     slug: 'kaggle',
     name: 'Machine Learning Projects',
-    summary: 'Two classification projects using pathology image patches and BBC news articles.',
+    summary: 'Two machine learning projects that classify pathology images and BBC news articles.',
     contribution: 'I built and evaluated model pipelines for computer vision and natural language processing and documented the experiments in notebooks.',
     technologies: ['Python', 'PyTorch', 'scikit-learn', 'TF-IDF'],
     caseStudy: [

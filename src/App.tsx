@@ -1,11 +1,24 @@
 import { Analytics } from '@vercel/analytics/react';
 import { useLayoutEffect } from 'react';
-import { ArrowLeft, ArrowUpRight, Github, Linkedin, Terminal } from 'lucide-react';
+import { ArrowLeft, Github, Linkedin, Terminal } from 'lucide-react';
 import { githubUrl, linkedInUrl, projects } from './content/projects';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ProjectPage } from './pages/DetailPages';
 import { ExternalLink } from './components/ExternalLink';
+
+const socialLinks = [
+  { href: githubUrl, label: 'GitHub profile', Icon: Github },
+  { href: linkedInUrl, label: 'LinkedIn profile', Icon: Linkedin },
+];
+
+function SocialLinks() {
+  return socialLinks.map(({ href, label, Icon }) => (
+    <ExternalLink key={href} href={href} className="social-link" aria-label={label}>
+      <Icon size={17} aria-hidden="true" />
+    </ExternalLink>
+  ));
+}
 
 const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
 const isHome = pathname === '/';
@@ -34,8 +47,7 @@ export function App() {
           <nav aria-label="Main navigation" className="main-nav">
             <a href="/#work">Work</a>
             <a href="/about" aria-current={isAbout ? 'page' : undefined}>About</a>
-            <ExternalLink href={githubUrl} className="header-social" aria-label="GitHub profile"><Github size={16} aria-hidden="true" /><span>GitHub</span></ExternalLink>
-            <ExternalLink href={linkedInUrl} className="header-social" aria-label="LinkedIn profile"><Linkedin size={16} aria-hidden="true" /><span>LinkedIn</span></ExternalLink>
+            <SocialLinks />
           </nav>
         </div>
       </header>
@@ -55,8 +67,7 @@ export function App() {
         <div className="container footer-inner">
           <span>© {new Date().getFullYear()} Marco Santos</span>
           <div className="footer-links">
-            <ExternalLink href={githubUrl}>GitHub <ArrowUpRight size={14} aria-hidden="true" /></ExternalLink>
-            <ExternalLink href={linkedInUrl}>LinkedIn <ArrowUpRight size={14} aria-hidden="true" /></ExternalLink>
+            <SocialLinks />
           </div>
         </div>
       </footer>

@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowUpRight, Download } from 'lucide-react';
+import { ArrowUpRight, Download } from 'lucide-react';
 import { BusinessMetrics } from '../components/BusinessMetrics';
 import { TechStack } from '../components/TechStack';
 import { businessExperience, resumeUrl, technicalSkills } from '../content/profile';
@@ -8,11 +8,10 @@ import { ExternalLink } from '../components/ExternalLink';
 export function AboutPage() {
   return (
     <article className="container detail-page about-page">
-      <a className="back-link" href="/"><ArrowLeft size={16} aria-hidden="true" /> Home</a>
       <header className="detail-header">
         <p className="eyebrow section-path">~/about</p>
         <h1>About me</h1>
-        <p className="detail-lede">I’m Marco Santos, a full-stack software engineer and business manager with seven years of experience leading a client-facing business. I bring both perspectives to the products I build.</p>
+        <p className="detail-lede">I’m Marco Santos, a full-stack software engineer with seven years of experience running a client-facing business. Working directly with customers informs how I build software.</p>
         <div className="profile-actions">
           <ExternalLink className="button button-primary" href={linkedInUrl}>LinkedIn <ArrowUpRight size={16} aria-hidden="true" /></ExternalLink>
           <ExternalLink className="button button-secondary" href={githubUrl}>GitHub <ArrowUpRight size={16} aria-hidden="true" /></ExternalLink>
@@ -26,19 +25,30 @@ export function AboutPage() {
             <section className="experience-item" aria-labelledby="wibo-experience">
               <p className="experience-dates">February 2025 – present</p>
               <h3 id="wibo-experience">Founder &amp; Full-Stack Software Engineer · <a href="/work/wibo">WiBo</a></h3>
-              <p>I took WiBo from idea to launch, building the real-time voice interviewer, whiteboard, and debrief. I also built document retrieval to give the interviewer context and added automated tests for the API, billing, and voice workflows.</p>
-            </section>
-            <section className="experience-item" id="business-experience" aria-labelledby="business-experience-heading">
-              <p className="experience-dates">{businessExperience.dates}</p>
-              <h3 id="business-experience-heading">{businessExperience.role} · {businessExperience.company}</h3>
-              <p>{businessExperience.summary}</p>
-              <p>{businessExperience.growth}</p>
-              <BusinessMetrics />
+              <ul className="experience-bullets">
+                <li>Built a Node.js and Express API with Firebase authentication, PostgreSQL and TypeORM persistence, and plan-based access for timed interview sessions.</li>
+                <li>Integrated OpenAI Realtime voice through a WebSocket relay with short-lived session tickets and usage limits.</li>
+                <li>Built a document retrieval pipeline with OpenAI embeddings and pgvector to give the interviewer relevant context.</li>
+                <li>Developed the React and Excalidraw whiteboard, session history, and Stripe checkout. Added Jest coverage and GitHub Actions CI for core backend workflows.</li>
+              </ul>
             </section>
             <section className="experience-item" aria-labelledby="aidconnect-experience">
               <p className="experience-dates">January 2024 – February 2025</p>
               <h3 id="aidconnect-experience">Backend Software Engineering Intern · <a href="/work/aidconnect">AidConnect</a></h3>
-              <p>I built scheduling and shift-management features and worked on account onboarding, Google sign-in, password recovery, and email notifications for healthcare aides.</p>
+              <ul className="experience-bullets">
+                <li>Built calendar and scheduling features to help teams coordinate tasks, shifts, and activities.</li>
+                <li>Developed account onboarding and authentication, including sign-up, Google OAuth, and password recovery.</li>
+                <li>Built in-app feedback and communication modules and automated email notifications with EJS templates.</li>
+                <li>Introduced sprint planning and stand-ups to improve team coordination.</li>
+              </ul>
+            </section>
+            <section className="experience-item" id="business-experience" aria-labelledby="business-experience-heading">
+              <p className="experience-dates">{businessExperience.dates}</p>
+              <h3 id="business-experience-heading">{businessExperience.role} · {businessExperience.company}</h3>
+              <ul className="experience-bullets">
+                {businessExperience.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+              </ul>
+              <BusinessMetrics />
             </section>
           </div>
         </section>

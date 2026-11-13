@@ -11,8 +11,8 @@ export function HomePage() {
         <div className="container hero-inner">
           <div className="hero-copy">
             <h1 id="hero-heading">
-              I’m Marco, a full-stack software engineer with business experience.{' '}
-              <span className="hero-statement">I build AI tools and multiplayer games<span className="hero-period">.</span></span>
+              Hi, I’m Marco.{' '}
+              <span className="hero-statement">I’m a full-stack software engineer focused on API design, real-time communication, and AI integration<span className="hero-period">.</span></span>
             </h1>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">View work <ArrowDown size={16} aria-hidden="true" /></a>
@@ -23,7 +23,7 @@ export function HomePage() {
         </div>
       </section>
       <section className="container work-section" id="work" aria-labelledby="work-heading">
-        <h2 className="eyebrow section-path" id="work-heading">Selected work</h2>
+        <h2 className="eyebrow section-path" id="work-heading"><span aria-hidden="true">~/</span>Selected work</h2>
         <div className="project-list">
           {projects.map((project) => <ProjectCard key={project.slug} project={project} />)}
         </div>

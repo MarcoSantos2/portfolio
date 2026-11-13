@@ -9,8 +9,7 @@ export function AboutPage() {
   return (
     <article className="container detail-page about-page">
       <header className="detail-header">
-        <p className="eyebrow section-path">~/about</p>
-        <h1>About me</h1>
+        <h1 className="eyebrow section-path">~/about</h1>
         <p className="detail-lede">I’m Marco Santos, a full-stack software engineer with seven years of experience running a client-facing business. Working directly with customers informs how I build software.</p>
         <div className="profile-actions">
           <ExternalLink className="button button-primary" href={linkedInUrl}>LinkedIn <ArrowUpRight size={16} aria-hidden="true" /></ExternalLink>

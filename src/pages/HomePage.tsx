@@ -11,8 +11,7 @@ export function HomePage() {
         <div className="container hero-inner">
           <div className="hero-copy">
             <h1 id="hero-heading">
-              Hi, I’m Marco.{' '}
-              <span className="hero-statement">I’m a full-stack software engineer focused on API design, real-time communication, and AI integration<span className="hero-period">.</span></span>
+              Hi, I’m Marco, a full-stack software engineer focused on API design, real-time communication, and AI integration<span className="hero-period">.</span>
             </h1>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">View work <ArrowDown size={16} aria-hidden="true" /></a>

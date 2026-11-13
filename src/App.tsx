@@ -6,6 +6,7 @@ import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ProjectPage } from './pages/DetailPages';
 import { ExternalLink } from './components/ExternalLink';
+import { observeSectionReveals } from './sectionReveals';
 
 const socialLinks = [
   { href: githubUrl, label: 'GitHub profile', Icon: Github },
@@ -33,6 +34,7 @@ export function App() {
   useLayoutEffect(() => {
     const anchor = window.location.hash.slice(1);
     if (anchor) document.getElementById(anchor)?.scrollIntoView({ behavior: 'instant' });
+    return observeSectionReveals();
   }, []);
 
   return (

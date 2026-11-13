@@ -28,14 +28,14 @@ export function ProjectPage({ project }: { project: Project }) {
           <p>{project.contribution}</p>
           {project.impact ? <p className="project-impact">{project.impact}</p> : null}
           {project.caseStudy.map((section) => (
-            <section key={section.title}>
+            <section key={section.title} data-reveal="">
               <h2>{section.title}</h2>
               <p>{section.text}</p>
             </section>
           ))}
           <TechStack technologies={project.technologies} />
         </div>
-        <aside className="detail-demo" aria-label={`${project.name} project media`}>
+        <aside className="detail-demo" aria-label={`${project.name} project media`} data-reveal="">
           <ProjectMedia project={project} />
           {project.slug === 'six-hops' ? <HopsDemo /> : null}
         </aside>

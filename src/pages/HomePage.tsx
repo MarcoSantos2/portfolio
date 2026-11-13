@@ -22,7 +22,7 @@ export function HomePage() {
         </div>
       </section>
       <section className="container work-section" id="work" aria-labelledby="work-heading">
-        <h2 className="eyebrow section-path" id="work-heading"><span aria-hidden="true">~/</span>Selected work</h2>
+        <h2 className="eyebrow section-path" id="work-heading" data-reveal=""><span aria-hidden="true">~/</span>Selected work</h2>
         <div className="project-list">
           {projects.map((project) => <ProjectCard key={project.slug} project={project} />)}
         </div>

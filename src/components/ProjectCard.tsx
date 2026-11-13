@@ -8,7 +8,7 @@ export function ProjectCard({ project }: { project: Project }) {
   const titleId = `project-${project.slug}`;
   const nameId = `${titleId}-name`;
   return (
-    <article className={`project-card card-${project.slug}`} aria-labelledby={`${nameId} ${titleId}`}>
+    <article className={`project-card card-${project.slug}`} aria-labelledby={`${nameId} ${titleId}`} data-reveal="card">
       <div className="project-content">
         <p id={nameId} className="eyebrow project-name">{project.name}</p>
         <h3 id={titleId}>{project.summary}</h3>

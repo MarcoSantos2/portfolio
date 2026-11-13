@@ -19,9 +19,9 @@ export function AboutPage() {
       </header>
       <div className="profile-layout">
         <section className="detail-story" aria-labelledby="experience-heading">
-          <h2 id="experience-heading">Experience</h2>
+          <h2 id="experience-heading" data-reveal="">Experience</h2>
           <div className="experience-list">
-            <section className="experience-item" aria-labelledby="wibo-experience">
+            <section className="experience-item" aria-labelledby="wibo-experience" data-reveal="">
               <p className="experience-dates">February 2025 – present</p>
               <h3 id="wibo-experience">Founder &amp; Full-Stack Software Engineer · <a href="/work/wibo">WiBo</a></h3>
               <ul className="experience-bullets">
@@ -31,7 +31,7 @@ export function AboutPage() {
                 <li>Developed the React and Excalidraw whiteboard, session history, and Stripe checkout. Added Jest coverage and GitHub Actions CI for core backend workflows.</li>
               </ul>
             </section>
-            <section className="experience-item" aria-labelledby="aidconnect-experience">
+            <section className="experience-item" aria-labelledby="aidconnect-experience" data-reveal="">
               <p className="experience-dates">January 2024 – February 2025</p>
               <h3 id="aidconnect-experience">Backend Software Engineering Intern · <a href="/work/aidconnect">AidConnect</a></h3>
               <ul className="experience-bullets">
@@ -41,7 +41,7 @@ export function AboutPage() {
                 <li>Introduced sprint planning and stand-ups to improve team coordination.</li>
               </ul>
             </section>
-            <section className="experience-item" id="business-experience" aria-labelledby="business-experience-heading">
+            <section className="experience-item" id="business-experience" aria-labelledby="business-experience-heading" data-reveal="">
               <p className="experience-dates">{businessExperience.dates}</p>
               <h3 id="business-experience-heading">{businessExperience.role} · {businessExperience.company}</h3>
               <ul className="experience-bullets">
@@ -52,7 +52,7 @@ export function AboutPage() {
           </div>
         </section>
         <div className="detail-story profile-sidebar">
-          <section aria-labelledby="education-heading">
+          <section aria-labelledby="education-heading" data-reveal="">
             <h2 id="education-heading">Education</h2>
             <ul className="profile-list">
               <li><strong>M.S. in Computer Science</strong><span>University of Colorado Boulder · Expected January 2027</span></li>
@@ -60,7 +60,7 @@ export function AboutPage() {
               <li><strong>A.A.S. in Business Administration</strong><span>Midwestern Career College</span></li>
             </ul>
           </section>
-          <section aria-labelledby="certifications-heading">
+          <section aria-labelledby="certifications-heading" data-reveal="">
             <h2 id="certifications-heading">Certifications</h2>
             <ul className="profile-list">
               <li>Graduate Certificate in Artificial Intelligence · University of Colorado Boulder</li>
@@ -69,7 +69,7 @@ export function AboutPage() {
               <li>Python Institute PCEP and PCAP</li>
             </ul>
           </section>
-          <section aria-labelledby="skills-heading">
+          <section aria-labelledby="skills-heading" data-reveal="">
             <h2 id="skills-heading">Technical skills</h2>
             {technicalSkills.map(({ label, technologies }) => (
               <div className="skill-group" key={label}>

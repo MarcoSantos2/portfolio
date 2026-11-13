@@ -105,6 +105,7 @@ export function ProjectMedia({ project }: { project: Project }) {
         <figure className="project-media video-media">
           <video
             aria-label="WiBo product release video"
+            data-wibo-video=""
             controls
             playsInline
             preload="none"
